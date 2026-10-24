@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173e3c">
+  <meta name="description" content="兩個人的北海道三日慢旅行：札幌、小樽、私人包船與海景溫泉。每日互動地圖、自駕路線及旅行準備清單。">
+  <title>北海道，慢一點。｜旅日手帖</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/leaflet.css">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./assets/leaflet.js"></script>
+  <script defer src="./itinerary.js"></script>
+  <script defer src="./route-data.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <noscript><p class="planning-note">請開啟 JavaScript 查看每日互動行程與地圖。下方包船、住宿、官方連結與準備資訊仍可閱讀。</p></noscript>
+  <a class="skip" href="#journey">跳至每日行程</a>
+  <header class="header"><a class="brand" href="#">旅日手帖<span>THE JAPAN JOURNAL</span></a><nav aria-label="主選單"><a href="#journey">每日行程</a><a href="#sea">包船體驗</a><a href="#stay">質感旅宿</a><a href="#prepare">出發準備 <span>↗</span></a></nav></header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">A PRIVATE ESCAPE · HOKKAIDO, JAPAN</p><h1>北海道，<br>慢一點<span>。</span></h1><p class="hero-description">把時間留給海，<br>把風景留給我們兩個。</p><p class="hero-sub">札幌的日常、小樽的海風，以及一晚溫泉。<br>一段不趕路，也不將就的北國旅行。</p><a class="button" href="#journey">翻開三日行程 <span>↘</span></a><div class="hero-meta"><span>2026.10.26 — 10.28</span><span>2 人 · 3 天 2 夜</span></div></div>
+      <div class="hero-art"><img src="./assets/hokkaido.svg" alt="原創插畫：秋日小樽海岸、遊船與遠方山巒" width="900" height="900"><div class="art-label"><span>北海道 / HOKKAIDO</span><b>43° N, 141° E</b></div><span class="art-note">北國秋日・旅行意象插畫</span></div>
+    </section>
+    <div class="trip-strip"><div><span>01 / STYLE</span><strong>雙人・自在奢旅</strong></div><div><span>02 / TRANSPORT</span><strong>自駕＋市區散步</strong></div><div><span>03 / HIGHLIGHT</span><strong>私人包船・海景溫泉</strong></div><div><span>04 / PACE</span><strong>不趕路，留白剛好</strong></div></div>
+    <div class="planning-note"><span class="dot"></span><p><strong>這是一份可調整的旅行提案，尚未訂購任何服務。</strong>暫以新千歲機場進出、首日中午前抵達／末日傍晚後離境規劃。出發機場與航班未定，所有時間皆為日本時間（UTC+9）。</p></div>
+    <section id="journey" class="journey section">
+      <div class="section-heading"><div><p class="eyebrow">YOUR THREE-DAY JOURNAL</p><h2>每天，都有一點心動。</h2></div><p>左邊是一天的節奏，右邊是風景的位置。<br>點選景點，讓地圖帶你靠近。</p></div>
+      <div class="day-tabs" role="tablist" aria-label="選擇旅行日期"><button id="tab-0" role="tab" aria-controls="day-panel" aria-selected="true" data-day="0"><span>DAY 01 <small>10.26 MON</small></span><b>初見札幌</b></button><button id="tab-1" role="tab" aria-controls="day-panel" aria-selected="false" tabindex="-1" data-day="1"><span>DAY 02 <small>10.27 TUE</small></span><b>把一天交給海</b></button><button id="tab-2" role="tab" aria-controls="day-panel" aria-selected="false" tabindex="-1" data-day="2"><span>DAY 03 <small>10.28 WED</small></span><b>在甜蜜中告別</b></button></div>
+      <div class="journey-grid"><div id="day-panel" role="tabpanel" aria-labelledby="tab-0" tabindex="0"><div id="day-intro"></div><div id="timeline" class="timeline"></div><div id="day-warning" class="day-warning"></div></div><aside class="map-column" aria-label="每日景點與路線地圖"><div class="map-heading"><div><span class="eyebrow">A LITTLE WAYFINDING</span><h3 id="map-title">今天的風景地圖</h3></div><button id="reset-map" class="icon-button" aria-label="顯示當日完整路線">⤢ <span>全覽</span></button></div><div class="map-wrap"><div id="map" role="region" aria-label="可縮放的北海道行程地圖"></div><p id="map-error" hidden>地圖未能載入，仍可使用下方 Google Maps 導航連結與行程地址。</p></div><div class="map-legend"><span><i class="legend-line"></i>自駕道路路線</span><span><i class="legend-line walking"></i>步行示意</span><span>● 景點位置</span></div><a id="day-navigation" class="map-navigation" target="_blank" rel="noopener noreferrer">在 Google Maps 開啟當日自駕路線 <span>↗</span></a><p class="map-disclaimer">道路線採 OSRM / OpenStreetMap 規劃快照，非即時導航；步行線僅連接位置，非實際步道。圖釘為近似位置，請依現場入口及導航確認。船路未經業者確認，不繪製海上航線。</p></aside></div>
+    </section>
+    <section id="sea" class="sea-section"><div class="sea-graphic" aria-hidden="true"><span>PRIVATE<br>ON THE SEA.</span><svg viewBox="0 0 450 180"><path d="M40 115 Q100 95 160 115 T280 115 T400 115 M15 145 Q75 125 135 145 T255 145 T435 145" fill="none" stroke="currentColor" stroke-width="1"/><path d="M125 80h190l-28 25H150z M180 80V55h80l20 25 M215 55V28" fill="none" stroke="currentColor" stroke-width="2"/></svg><small>小樽の海で、ふたりだけの時間。</small></div><div class="sea-copy"><p class="eyebrow">DAY 02 · THE SIGNATURE EXPERIENCE</p><h2>這片海，<br>只為我們停留。</h2><span class="status">包船候選 · 需立即詢問空位與報價</span><p>龍宮クルーズ的海岸巡遊約 70 分鐘。官方 FAQ 明確提供包船，10 月下旬採預約申請制；暫排 10/27 10:30，須由業者確認。</p><div class="sea-facts"><div><span>登船位置</span><b>小樽市港町 4-5</b></div><div><span>包船費用</span><b>待業者另行報價</b></div><div><span>提前報到</span><b>至少 15 分鐘</b></div><div><span>停車 → 受付</span><b>免費停車・估 1–3 分</b></div></div><p class="sea-caution">重要：因落石，不進入青之洞窟內部。10 月下旬易有強風高浪，可能臨時取消；這不是豪華遊艇或保證出航的體驗。若不適合開放式小艇，改由飯店禮賓協助另詢有艙包船。</p><div class="sea-actions"><a class="button light" href="tel:+81134323911">致電詢問包船 ↗</a><a href="https://hokuo-marine.com/qa.html" target="_blank" rel="noopener noreferrer">官方包船說明 ↗</a></div><details><summary>查看日文詢問範本與停航備案</summary><p lang="ja">2026年10月27日10時30分ごろ、大人2名で貸切クルーズを希望しています。運航可否、空き状況、貸切料金、集合場所、キャンセル規定を教えてください。悪天候時、港内コースへの変更は可能ですか。</p><p>備案 A：詢問原業者當日是否能改為約 40 分鐘的港內包船，費用與貸切條件另確認。備案 B：若海上全停，改小樽藝術村與堺町玻璃工藝，提早回旅館泡湯。不能保證同日仍能搭船。</p><p>小樽運河クルーズ官方一般包船須提前 5 天；距出發太近，不列為可直接預約的保證替代方案。</p><a href="https://hokuo-marine.com/archives/291/" target="_blank" rel="noopener noreferrer">10 月營運與海況公告 ↗</a></details></div></section>
+    <section id="stay" class="section"><div class="section-heading"><div><p class="eyebrow">STAY SOMEWHERE SPECIAL</p><h2>夜晚，也值得被期待。</h2></div><p>一晚城市天際線，一晚海邊的湯。<br>推薦房型需確認空房，不代表已預訂。</p></div><div class="stay-grid"><article class="stay-card"><div class="stay-illustration city"><span>NIGHT 01 / SAPPORO</span><div class="building"></div><b>眠在城市的光裡。</b></div><div class="stay-body"><span class="eyebrow">10.26 → 10.27</span><h3>JR Tower Hotel Nikko Sapporo</h3><p>札幌站旁的高樓景觀旅宿。優先詢問高樓層雙人房或套房；晚餐可洽館內丹頂，依實際營業與座位安排。</p><p class="small">自駕：使用飯店指示之停車場，停妥至大廳估 3–8 分鐘。車站周邊長期施工，入口動線須依飯店最新公告，避免只跟隨舊導航。</p><a href="https://www.jrhotels.co.jp/tower/" target="_blank" rel="noopener noreferrer">查看旅宿與訂房 ↗</a></div></article><article class="stay-card"><div class="stay-illustration coast"><span>NIGHT 02 / OTARU</span><div class="onsen-rings"></div><b>泡進海與天的交界。</b></div><div class="stay-body"><span class="eyebrow">10.27 → 10.28</span><h3>料亭湯宿 銀鱗莊</h3><p>在俯瞰石狩灣的高台上住一晚。優先詢問海景客房、私人湯池或貸切泡湯條件，安排一泊二食，晚間不再開車。</p><p class="small">地址：小樽市櫻 1 丁目 1 番地。使用旅館指定停車位置，至入口步行估 1–3 分鐘；房型、用餐及停車條件請在預訂時確認。</p><a href="https://www.ginrinsou.com/zh-TW/" target="_blank" rel="noopener noreferrer">查看旅宿與訂房 ↗</a></div></article></div></section>
+    <section id="prepare" class="section prepare"><div><p class="eyebrow">BEFORE WE GO</p><h2>出發前，<br>把小事安頓好。</h2><p>預算沒有上限，安全與舒適仍是優先。<br>勾選狀態只保存在這台裝置，不會變成訂單。</p><button id="print" class="text-button">列印／另存行程 PDF ↗</button><span id="save-status" role="status" class="small"></span></div><div class="checklist"><label><input type="checkbox" data-check="flight"><span><strong>確認去回程航班</strong><small>出發機場待補。若首日晚到，刪除市區散步；末日早班機則取消白色戀人公園。</small></span></label><label><input type="checkbox" data-check="charter"><span><strong>優先詢問 10/27 雙人包船</strong><small>取得正式報價、確認包船非併船、運航條件、保險及退款規定。</small></span></label><label><input type="checkbox" data-check="hotel"><span><strong>確認兩晚旅宿與餐食</strong><small>詢問房型、飲食禁忌、晚餐時段及取消政策，不以網站提案視為訂房確認。</small></span></label><label><input type="checkbox" data-check="car"><span><strong>租車、駕照文件與秋冬路況</strong><small>依駕照核發地確認日本承認的駕駛文件；若持台灣駕照，確認正本與有效日文譯本等規定。預約適合車款、冬胎與保險；四驅不等於防滑。</small></span></label><label><input type="checkbox" data-check="weather"><span><strong>查看天氣與海況，備妥保暖衣物</strong><small>準備防風防水外套、防滑鞋與暈船用品；依身體狀況諮詢醫師／藥師。結冰降雪則不勉強自駕，可改包車或 JR。</small></span></label><label><input type="checkbox" data-check="airport"><span><strong>預留還車與機場報到緩衝</strong><small>先按起飛前約 4 小時抵還車點規劃，涵蓋加油、手續、接駁及報到；最終依租車商、航空公司規定調整。</small></span></label></div></section>
+    <section class="sources section"><details><summary>資料來源、估算方式與網站說明 <span>＋</span></summary><div class="source-grid"><div><h3>官方資訊｜查核日 2026.10.24</h3><ul>
+      <li><a href="https://hokuo-marine.com/archives/291/">龍宮：2026 年 10 月運航公告</a>（下旬採申請制、海況風險）</li>
+      <li><a href="https://hokuo-marine.com/qa.html">龍宮：FAQ</a>（可包船、無法進洞、免費停車）</li>
+      <li><a href="https://hokuo-marine.com/fee.html">龍宮：時間與費用</a>（70 分、報到及取消規定；乘合價非包船價）</li>
+      <li><a href="https://hokuo-marine.com/access.html">龍宮：交通與 Google Maps 車程參考</a>（札幌站至小樽約 45 分鐘，規劃另留緩衝）</li>
+      <li><a href="https://otaru.cc/charterv2">小樽運河包船</a>（一般預約提前 5 天）</li>
+      <li><a href="https://www.jrhotels.co.jp/tower/">JR Tower Hotel Nikko Sapporo</a>（旅宿與施工提醒）</li>
+      <li><a href="https://www.ginrinsou.com/">銀鱗莊</a>（海景溫泉、位置、餐飲）</li>
+      <li><a href="https://www.shiroikoibitopark.jp/">白色戀人公園</a>（開放／體驗時段出發前再查）</li>
+      <li><a href="https://www.nitorihd.co.jp/otaru-art-base/">小樽藝術村</a>（停航室內備案）</li>
+      <li><a href="https://www.jrhotels.co.jp/tower/access/car.html">札幌旅宿交通與停車資訊</a></li>
+      <li><a href="https://www.shiroikoibitopark.jp/park-guide/access.html">白色戀人公園交通與停車資訊</a></li>
+      <li><a href="https://www.ginrinsou.com/access/">銀鱗莊交通資訊</a></li>
+    </ul></div><div><h3>哪些是建議，不是已確認事項？</h3><p>所有行程時間、餐飲安排、房型、費用與步行時間為規劃建議；未查詢即時空房、船位或機票。停車費及空位以現場為準，步行時間以一般步速估算。</p><p>每日車程採 OSRM 道路引擎估算，另保留交通與天候緩衝；不是指定日期的交通預測。路線可能有收費路段，路線資料與圖釘不適合直接作為行車指示。Google Maps 可開啟重新計算。</p><p>地圖：Leaflet、© OpenStreetMap contributors；路線：OSRM。插畫為本網站原創意象，非旅宿或景點實景。網站無追蹤碼、無支付功能；地圖底圖與外部連結會連線至第三方服務。</p><a href="https://github.com/i5421jeffrey/japan-travel" target="_blank" rel="noopener noreferrer">網站原始碼 GitHub ↗</a></div></div></details></section>
+  </main>
+  <footer><a class="brand" href="#">旅日手帖<span>COLLECT MOMENTS, NOT MILES.</span></a><p>HOKKAIDO · AUTUMN 2026<br>給兩個人的北國小旅行。</p><a href="#journey">回到行程 ↑</a></footer>
+</body>
+</html>

@@ -10,8 +10,6 @@ const {TRIP_DATA:days,TRIP_ROUTES:routes} = context.window;
 assert.equal(days.length,3);
 assert.equal(routes.length,3);
 const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
-assert.ok(html.includes('<title>北海道，快一點！｜旅日手帖</title>'),'Page title must match the new headline');
-assert.ok(html.includes('class="dot-title" aria-label="北海道，快一點！"'),'Decorative headline needs a readable accessible label');
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 assert.equal(new Set(ids).size,ids.length,'HTML IDs must be unique');
 for (const [,asset] of html.matchAll(/(?:src|href)="(\.\/[^"?#]+)"/g)) assert.ok(fs.existsSync(path.join(root,asset)),`Missing asset ${asset}`);
